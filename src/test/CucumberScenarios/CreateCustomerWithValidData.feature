@@ -1,7 +1,7 @@
 Feature: Create customer with valid data
   Scenario: User calls web service to fill the register form with valid data and submit it
 	Given User open register form on web service
-	When user filled the field id with input text: 1232
+	When user filled the field id with input text: 1232S
 	And filled the field first name with input text: Jack
 	And filled the field last name with input text: Reacher
 	And filled the field age with input text: 34

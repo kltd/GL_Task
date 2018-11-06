@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"steps"},
-        features = {"src/test/features"})
+        features = {"src/test/CucumberScenarios"})
 
 public class CucumberTests {
 

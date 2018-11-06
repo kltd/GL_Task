@@ -58,8 +58,8 @@ public class StubTests {
         assertThat(response.getStatusCode(), is(200));
 
 
-        assertThat(response.statusCode(), is(200));
-//        assertThat(response.statusCode(), is(401));
+        assertThat(response.statusCode(), is(401));
+
 
     }
 }
