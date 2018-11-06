@@ -77,6 +77,9 @@ public class CucumberSteps {
 
         configureFor("localhost", wireMockServer.port());
         stubFor(post(urlEqualTo("/rest/api/customer"))
+                .withRequestBody(matchingJsonPath("$.id"))
+                .withRequestBody(matchingJsonPath("$.first_name"))
+                .withRequestBody(matchingJsonPath("$.last_name"))
                 .willReturn(aResponse()
                         .withStatus(201)
                         .withStatusMessage("successfully created")
@@ -100,6 +103,9 @@ public class CucumberSteps {
 
         configureFor("localhost", wireMockServer.port());
         stubFor(post(urlPathEqualTo("/rest/api/customer/"))
+                .withRequestBody(matchingJsonPath("$.id"))
+                .withRequestBody(matchingJsonPath("$.first_name"))
+                .withRequestBody(matchingJsonPath("$.last_name"))
                 .withRequestBody(containing(""))
                 .willReturn(aResponse()
                         .withStatus(401)));
