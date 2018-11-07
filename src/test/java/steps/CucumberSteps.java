@@ -8,25 +8,32 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
 import java.util.List;
-import java.util.Map;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CucumberSteps {
     private final static String PROTOCOL = "http://";
-    private final static String HOST_NAME = "loclhost";
-    private final static String PATH_NAME = "/rest/api/create_customer";
+    private final static String HOST_NAME = "localhost";
+    private final static int    PORT = 8888;
+    private final static String POST_PATH_NAME = "/rest/api/customer/";
+    private final static String GET_PATH_NAME = "/rest/api/get_customer/";
+
+    private final static String ENDPOINT_POST_CUSTOMER = PROTOCOL+HOST_NAME+":"+PORT+POST_PATH_NAME ;
+    private final static String ENDPOINT_GET_CUSTOMER = PROTOCOL+HOST_NAME+":"+PORT+GET_PATH_NAME;
+
+    private final static int STATUS_CODE_200 = 200;
+    private final static int STATUS_CODE_201 = 201;
+    private final static int STATUS_ERROR_CODE_401 = 401;
+    private final static int STATUS_ERROR_CODE_404 = 404;
+
 
     private Response response;
     private JSONObject requestBody = new JSONObject();
@@ -72,16 +79,16 @@ public class CucumberSteps {
 
     @And("^press submit")
     public void submitCreateCustomerWithValidData() {
-        WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
+        WireMockServer wireMockServer = new WireMockServer(options().port(PORT));
         wireMockServer.start();
 
-        configureFor("localhost", wireMockServer.port());
-        stubFor(post(urlEqualTo("/rest/api/customer"))
+        configureFor(HOST_NAME, wireMockServer.port());
+        stubFor(post(urlEqualTo(POST_PATH_NAME))
                 .withRequestBody(matchingJsonPath("$.id"))
                 .withRequestBody(matchingJsonPath("$.first_name"))
                 .withRequestBody(matchingJsonPath("$.last_name"))
                 .willReturn(aResponse()
-                        .withStatus(201)
+                        .withStatus(STATUS_CODE_201)
                         .withStatusMessage("successfully created")
                         .withBody("{\n" +
                                 "      \""+response_id+"\": int,\n" +
@@ -91,29 +98,31 @@ public class CucumberSteps {
         RequestSpecification request = RestAssured.given();
         request.body(requestBody.toString());
 
-        response = request.post("http://localhost:" + wireMockServer.port() + "/rest/api/customer");
+        response = request.post(ENDPOINT_POST_CUSTOMER);
+        System.out.println("response: " + response.prettyPrint());
 
         wireMockServer.stop();
     }
 
     @And("^with invalid data press submit$")
     public void submitCreateCustomerWithInvalidData() {
-        WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
+        WireMockServer wireMockServer = new WireMockServer(options().port(PORT));
         wireMockServer.start();
 
-        configureFor("localhost", wireMockServer.port());
-        stubFor(post(urlPathEqualTo("/rest/api/customer/"))
+        configureFor(HOST_NAME, wireMockServer.port());
+        stubFor(post(urlPathEqualTo(POST_PATH_NAME))
                 .withRequestBody(matchingJsonPath("$.id"))
                 .withRequestBody(matchingJsonPath("$.first_name"))
                 .withRequestBody(matchingJsonPath("$.last_name"))
                 .withRequestBody(containing(""))
                 .willReturn(aResponse()
-                        .withStatus(401)));
+                        .withStatus(STATUS_ERROR_CODE_401)));
 
         RequestSpecification request = RestAssured.given();
         request.body(requestBody.toString());
 
-        response = request.post("http://localhost:" + wireMockServer.port() + "/rest/api/customer/");
+        response = request.post(ENDPOINT_POST_CUSTOMER);
+        System.out.println("response: " + response.prettyPrint());
 
         wireMockServer.stop();
     }
@@ -131,19 +140,18 @@ public class CucumberSteps {
 
     @And("^press search")
     public void searchGetCustomerByValidId() {
-        WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
+        WireMockServer wireMockServer = new WireMockServer(options().port(PORT));
         wireMockServer.start();
 
-        configureFor("localhost", wireMockServer.port());
-        stubFor(get(urlEqualTo("/rest/api/get_customer/"+customer_id))
+        configureFor(HOST_NAME, wireMockServer.port());
+        stubFor(get(urlEqualTo(GET_PATH_NAME+customer_id))
                 .willReturn(aResponse()
-                        .withStatus(200)));
+                        .withStatus(STATUS_CODE_200)));
 
         RequestSpecification request = RestAssured.given();
         request.body(requestBody.toString());
 
-        response = request.when().get("http://localhost:" + wireMockServer.port()
-                + "/rest/api/get_customer/"+customer_id);
+        response = request.when().get(ENDPOINT_GET_CUSTOMER+customer_id);
         System.out.println("response: " + response.prettyPrint());
 
         wireMockServer.stop();
@@ -151,19 +159,18 @@ public class CucumberSteps {
 
     @When("with invalid data press search")
     public void searchGetCustomerByInvalidId() {
-        WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
+        WireMockServer wireMockServer = new WireMockServer(options().port(PORT));
         wireMockServer.start();
 
-        configureFor("localhost", wireMockServer.port());
-        stubFor(get(urlEqualTo("/rest/api/get_customer/"+customer_id))
+        configureFor(HOST_NAME, wireMockServer.port());
+        stubFor(get(urlEqualTo(GET_PATH_NAME+customer_id))
                 .willReturn(aResponse()
-                        .withStatus(404)));
+                        .withStatus(STATUS_ERROR_CODE_404)));
 
         RequestSpecification request = RestAssured.given();
         request.body(requestBody.toString());
 
-        response = request.when().get("http://localhost:" + wireMockServer.port()
-                + "/rest/api/get_customer/"+customer_id);
+        response = request.when().get(ENDPOINT_GET_CUSTOMER+customer_id);
         System.out.println("response: " + response.prettyPrint());
 
         wireMockServer.stop();

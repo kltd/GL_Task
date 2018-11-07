@@ -23,15 +23,16 @@
     <session id="2133947478">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,16 +56,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="48" />
+          <entry key="dummy" value="60" />
           <entry key="feature" value="1295" />
-          <entry key="java" value="4394" />
+          <entry key="java" value="4721" />
           <entry key="xml" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4394" />
-          <entry key="PLAIN_TEXT" value="311" />
+          <entry key="JAVA" value="4721" />
+          <entry key="PLAIN_TEXT" value="323" />
           <entry key="Substeps" value="1032" />
           <entry key="XML" value="43" />
         </counts>
@@ -73,15 +74,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/steps/CucumberSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="107" column="65" selection-start-line="107" selection-start-column="65" selection-end-line="107" selection-end-column="65" />
+            <state relative-caret-position="1517">
+              <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1664#1665#0" expanded="true" />
                 <element signature="e#1721#1722#0" expanded="true" />
+                <element signature="e#1993#1994#0" expanded="true" />
+                <element signature="e#2036#2037#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,7 +156,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithInvalidData.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -166,7 +169,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithValidData.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -203,6 +206,7 @@
       <find>press submit</find>
       <find>customer fille</find>
       <find>user filled the field id with input text</find>
+      <find>WireMockServer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -240,9 +244,9 @@
         <option value="$PROJECT_DIR$/src/test/java/options/CucumberTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/services/TestBuff.java" />
         <option value="$PROJECT_DIR$/src/test/java/services/StubTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/steps/CucumberSteps.java" />
         <option value="$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithValidData.feature" />
         <option value="$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithInvalidData.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/steps/CucumberSteps.java" />
       </list>
     </option>
   </component>
@@ -319,6 +323,30 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="steps" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TestAutomationTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestAutomationTask" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestAutomationTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestAutomationTask" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-test-sources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestAutomationTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestAutomationTask" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="test-classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestAutomationTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestAutomationTask" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="test-classes" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -327,7 +355,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541540011223" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541575148552" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="C:/myHomeRepoDHL/dhl-ewf/QAautoTest" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -425,34 +453,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 08m 29s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 09m 13s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 08m 48s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 10m 03s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 09m 55s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 10m 29s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 15m 03s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 11m 11s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 22m 19s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 11m 39s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 18h 41m 26s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 12m 14s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 23h 27m 04s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 13m 01s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 23h 28m 34s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 13m 43s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 23h 29m 26s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 14m 20s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberTests - 2018.11.06 at 23h 30m 49s.xml">
+    <history-entry file="CucumberTests - 2018.11.07 at 09h 15m 43s.xml">
       <configuration name="CucumberTests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -469,7 +497,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31876332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32249466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -479,7 +507,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.547651" visible="true" weight="0.24858116" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.547651" visible="true" weight="0.24858116" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.66308725" weight="0.5141884" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -555,9 +583,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/CucumberSteps.java</url>
-          <line>59</line>
+          <line>103</line>
           <properties />
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -611,12 +639,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/services/Utils.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/steps/CucumberSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="107" column="65" selection-start-line="107" selection-start-column="65" selection-end-line="107" selection-end-column="65" />
+        <state relative-caret-position="1517">
+          <caret line="161" column="81" selection-start-line="161" selection-start-column="81" selection-end-line="161" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1664#1665#0" expanded="true" />
             <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#1993#1994#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,24 +705,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/GetCustomerByValidId.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithInvalidData.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithValidData.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/CreateCustomerWithInvalidData.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/CucumberScenarios/GetCustomerByValidId.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-end-line="5" selection-end-column="31" />
         </state>
       </provider>
     </entry>
